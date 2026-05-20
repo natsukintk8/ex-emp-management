@@ -1,12 +1,11 @@
 package com.example.domain;
 
+/**
+ * 管理者情報を表すドメインクラスです.<br>
+ *
+ * administratorsテーブルに対応しています。
+ */
 public class Administrator {
-    /**
-     * 管理者情報を表すドメインクラスです.<br>
-     *
-     * administratorsテーブルに対応しています。
-     */
-
     /**　ID　*/
     private Integer id;
     /**　名前　*/

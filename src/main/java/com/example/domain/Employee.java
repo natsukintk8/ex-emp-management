@@ -1,13 +1,12 @@
 package com.example.domain;
 
 import java.util.Date;
-
+/**
+ * 従業者情報を表すドメインクラスです.<br>
+ *
+ * employeesテーブルに対応しています。
+ */
 public class Employee {
-    /**
-     * 従業者情報を表すドメインクラスです.<br>
-     *
-     * employeesテーブルに対応しています。
-     */
 
     /**　ID　*/
     private Integer id;

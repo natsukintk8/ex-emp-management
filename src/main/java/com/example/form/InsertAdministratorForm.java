@@ -1,9 +1,9 @@
 package com.example.form;
-
+/**
+ * 管理者情報登録時に使用するフォームです.<br>
+ */
 public class InsertAdministratorForm {
-    /**
-     * 管理者情報登録時に使用するフォームです.<br>
-     */
+
 
     /** 名前　*/
     private String name;

@@ -11,6 +11,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * 管理者情報を操作するリポジトリクラスです.
+ */
 @Repository
 public class AdministratorRepository {
     @Autowired
@@ -21,7 +24,7 @@ public class AdministratorRepository {
         Administrator administrator = new Administrator();
         administrator.setId(rs.getInt("id"));
         administrator.setName(rs.getString("name"));
-        administrator.setMailAddress(rs.getString("mailAddress"));
+        administrator.setMailAddress(rs.getString("mail_address"));
         administrator.setPassword(rs.getString("password"));
         return administrator;
     };
@@ -29,7 +32,7 @@ public class AdministratorRepository {
     /**
      * 管理者情報を挿入する.
      *
-     * @param administrator
+     * @param administrator 管理者情報
      */
     public void insert(Administrator administrator) {
         SqlParameterSource param = new BeanPropertySqlParameterSource(administrator);
@@ -66,9 +69,9 @@ public class AdministratorRepository {
     /**
      * メールアドレスとパスワードから管理者情報を取得する.
      *
-     * @param mailAddress
-     * @param password
-     * @return　管理者情報（1件も存在しない場合はnullを返す）
+     * @param mailAddress メールアドレス
+     * @param password パスワード
+     * @return 管理者情報（1件も存在しない場合はnullを返す）
      */
     public Administrator findByMailAddressAndPassword(String mailAddress, String password) {
         String sql = """
@@ -85,7 +88,7 @@ public class AdministratorRepository {
                 """;
 
         SqlParameterSource param = new MapSqlParameterSource()
-                .addValue("mail_address", mailAddress)
+                .addValue("mailAddress", mailAddress)
                 .addValue("password", password);
 
         List<Administrator> administratorList

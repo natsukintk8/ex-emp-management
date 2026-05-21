@@ -18,11 +18,22 @@ public class EmployeeService {
     private EmployeeRepository employeeRepository;
 
     /**
-     *従業員情報一覧を全件検索する業務処理を行う.
+     * 従業員情報一覧を全件検索する業務処理を行う.
      *
      * @return 全従業員情報一覧
      */
-    public List<Employee> showList(){
+    public List<Employee> showList() {
         return employeeRepository.findAll();
     }
+
+    /**
+     * 従業員情報詳細を全件検索する業務処理を行う.
+     *
+     * @param id ID
+     * @return 従業員情報詳細
+     */
+    public Employee showDetail(Integer id){
+       return employeeRepository.findById(id);
+    }
 }
+

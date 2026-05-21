@@ -38,7 +38,7 @@ public class EmployeeRepository {
                   employees
                 
                  ORDER BY
-                  hire_code DESC
+                  hire_date DESC
                 """;
 
         List<Employee> employeeList = template.query(sql, EMPLOYEE_ROW_MAPPER);
